@@ -27,15 +27,15 @@ const ul = document.querySelector("#navbar__list");
 
 // Hides the navbar when scrolling down
 const medQuery = window.matchMedia( "(min-width: 430px)" );
-function hideNav(x) {
+function hideNav() {
   if (medQuery.matches) {
     let prevScrollpos = window.scrollY;
     window.onscroll = function() {
     let currentScrollpos = window.scrollY;
       if (prevScrollpos > currentScrollpos) {
-        document.querySelector('.page__header').style.top = '0';
+        document.querySelector('.page__header').style.top = "0";
       } else {
-        document.querySelector('.page__header').style.top = '-52px';
+        document.querySelector('.page__header').style.top = "-52px";
       }
       prevScrollpos = currentScrollpos;
     }
@@ -45,9 +45,9 @@ function hideNav(x) {
     window.onscroll = function() {
     let currentScrollpos = window.scrollY;
       if (prevScrollpos > currentScrollpos) {
-        document.querySelector('.page__header').style.top = '0';
+        document.querySelector('.page__header').style.top = "0";
       } else {
-        document.querySelector('.page__header').style.top = '-220px';
+        document.querySelector('.page__header').style.top = "-220px";
       }
       prevScrollpos = currentScrollpos;
     }
@@ -57,7 +57,7 @@ function hideNav(x) {
 
 // builds the navigation based on how many sections are in the html
 for(section of sections){
-    let li = document.createElement('li');
+    let li = document.createElement("li");
     li.innerHTML += `<a href="#${section.id}" class="menu__link">${section.dataset.nav}</a>`;
     ul.appendChild(li);
 }
