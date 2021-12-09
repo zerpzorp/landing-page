@@ -222,6 +222,10 @@ section.active {
     background: linear-gradient(0deg, rgba(252, 153, 124, .2) 0%, rgba(0, 0, 0, 0) 100%);;
 }
 
+.active-nav {
+    background: blue;
+}
+
 section.active .landing__container::before {
     opacity: 1;
     animation: rotate 4s linear 0s infinite forwards;

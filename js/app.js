@@ -21,6 +21,7 @@
 // Global Variables **
 const sections = Array.from(document.getElementsByTagName("section"));
 const ul = document.querySelector("#navbar__list");
+const navLink = Array.from(document.getElementsByTagName("li"));
 
 
 // Main Functions **
@@ -57,15 +58,9 @@ function hideNav() {
 
 // builds the navigation based on how many sections are in the html
 for(section of sections){
-    let li = document.createElement("li");
+    const li = document.createElement("li");
     li.innerHTML += `<a href="#${section.id}" class="menu__link">${section.dataset.nav}</a>`;
     ul.appendChild(li);
-}
-
-// Inserts the hamburger menu into the navigation list
-function hamburger() {
-  li.innerHTML += `class="toggle"><a href="#"><i class="fas fa-bars"></i></a>`;
-  ul.appendChild(li);
 }
 
 // Adds active class to a section when it's near the top of viewport
@@ -73,9 +68,11 @@ let makeActive = () => {
   for (const section of sections) {
     const box = section.getBoundingClientRect();
     if (box.top <= 150 && box.bottom >= 150){
-      section.classList.add("active")
+      section.classList.add("active");
+      // navLink.classList.add("active-nav");
     } else {
-      section.classList.remove("active")
+      section.classList.remove("active");
+      // navLink.classList.remove("active-nav");
     }
   }
 }
