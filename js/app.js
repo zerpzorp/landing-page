@@ -21,8 +21,8 @@ function makeActive() {
 }
 
 // Hides the navbar when scrolling down
-function hideNav() {
-  if (medQuery.matches) {
+function hideNav(e) {
+  if (e.matches) {
     let prevScrollpos = window.scrollY;
     window.onscroll = function() {
     let currentScrollpos = window.scrollY;
@@ -67,20 +67,6 @@ for(section of sections) {
     ul.appendChild(li);
 }
 
-
-// Adds smooth scroll function when clicking link in menu
-function smoothScroll(e) {
-  e.preventDefault();
-  const href = this.getAttribute("href");
-  const offsetTop = document.querySelector(href).offsetTop;
-
-  window.scrollTo({
-    top: offsetTop,
-    behavior: "smooth"
-  });
-}
-
-
 // Events **
 // Listener for setting active class based on position in viewport
 document.addEventListener('scroll', function () {
@@ -88,16 +74,8 @@ document.addEventListener('scroll', function () {
 });
 
 // Listeners for media query
-// Ongoing listener
-medQuery.addListener(hideNav);
-// Initial listener
+medQuery.addEventListener("change", hideNav);
 hideNav(medQuery)
-
-// Listener for smooth scroll after link click ** Note: Global variable must remain here for the smooth scrolling function to work.
-const links = (document.querySelectorAll('.menu__link'));
-for (const link of links) {
-   link.addEventListener("click", smoothScroll);
-}
 
 // Listener for hiding the navbar after the user stops scrolling
 document.addEventListener('scroll', function(){

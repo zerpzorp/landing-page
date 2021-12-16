@@ -12,6 +12,7 @@ A generic landing page made interactive with javascript.
 - [Table of contents](#table-of-contents)
 - [Usage](#usage)
 - [Development](#development)
+- [Author](#author)
 
 # Usage
 
@@ -24,3 +25,7 @@ This page is intended to showcase an understanding of javascript concepts.
 [(Back to top)](#table-of-contents)
 
 Includes active sections with a subtle highlight and rotating orbs when the section is in the viewport. Also added was smooth scrolling when a navbar link is clicked.
+
+# Author
+
+Aaron Carver

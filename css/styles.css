@@ -18,6 +18,9 @@
      color: #fff;
  }
 
+html {
+     scroll-behavior: smooth;
+}
 
  /* Typeography General*/
  h1 {
