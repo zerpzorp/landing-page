@@ -50,7 +50,7 @@ function hideNav(e) {
 
 
 // Function to hide the navbar if the user stops scrolling
-function isUserScrolling() {
+function scrollingTimeout() {
     if(isScrolling !== null){
         clearTimeout(isScrolling);
     }
@@ -79,7 +79,7 @@ hideNav(medQuery)
 
 // Listener for hiding the navbar after the user stops scrolling
 document.addEventListener('scroll', function(){
-    isUserScrolling();
+    scrollingTimeout();
 }, false);
 
 // This brings the navbar back when the user starts scrolling
