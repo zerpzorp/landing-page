@@ -49,7 +49,7 @@ function hideNav(e) {
 }
 
 
-// Function to hide the navbar if the user stops scrolling
+// Hides the navbar if the user stops scrolling
 function scrollingTimeout() {
     if(isScrolling !== null){
         clearTimeout(isScrolling);
